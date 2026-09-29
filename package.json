@@ -1,0 +1,9 @@
+{
+  "name": "ultima-fatia-feedback",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "pnpm --dir frontend dev",
+    "dev:backend": "pnpm --dir backend dev",
+    "install:all": "pnpm --dir frontend install && pnpm --dir backend install"
+  }
+}
