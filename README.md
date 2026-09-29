@@ -57,4 +57,9 @@ pnpm dev                     # http://localhost:3000
 
 As opções (produtos e escalas) ficam em `frontend/lib/feedback-options.ts` e em `backend/src/constants.ts`.
 Se mudar uma, mude a outra — o backend só aceita os textos exatos.
-# form-ultimaFatia
+
+## Deploy no Railway (monorepo)
+
+- Crie **um serviço para cada pasta** e defina o *Root Directory* como `backend` num e `frontend` no outro.
+- Backend: adicione o plugin Postgres e, nas variáveis do serviço, `DATABASE_URL` (referência ao Postgres), `ADMIN_PASSWORD`, `JWT_SECRET`, `FRONTEND_URL` (endereço do frontend) e `TRUST_PROXY=1`. A porta vem do próprio Railway (`PORT`).
+- Frontend: defina `NEXT_PUBLIC_API_URL` com o endereço público do backend **antes** do deploy (ela é embutida no build).
